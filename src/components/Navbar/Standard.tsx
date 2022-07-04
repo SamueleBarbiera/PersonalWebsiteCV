@@ -1,7 +1,7 @@
 import { Disclosure } from '@headlessui/react'
-import NavbarDropdown from '../../components/Navbar/Dropdown'
+import NavbarDropdown from './Dropdown'
 import ButtonIcon from '../../components/Button/Icon'
-import NavbarIcon from '../../components/Navbar/Icon'
+import NavbarIcon from './Icon'
 import { useNavigation } from '../../lib/navigation'
 
 export default function Standard() {

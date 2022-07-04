@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import ViewMoreBtn from '../components/ViewMoreBtn'
 import Wrapper from '../components/Wrapper'
 import ListItem from '../components/list-item'
-import { PinnedRepo, useGitHubPinnedRepos } from '../hooks/github'
+import { PinnedRepo, useGitHubPinnedRepos } from '../lib/github'
 import {
     SiAmazonaws,
     SiBabel,

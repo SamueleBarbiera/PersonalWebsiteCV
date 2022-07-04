@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import { Fragment } from 'react'
 import { Icon } from '@iconify/react'
-import StatusIndicator from '../../Status/Indicator'
-import { useStatus } from '../../../lib/lanyard'
 import { ReactNode } from 'react'
 import Loading from './Loading'
 import Error from './Error'
@@ -25,72 +23,7 @@ interface Activity {
 }
 
 export default function Widget() {
-    const { loading, status } = useStatus()
-    console.log('🚀 - file: Standard.tsx - line 32 - Widget - status', status)
 
-    if (loading) return <Loading />
-
-    if (!status) return <Error />
-
-    const activities: Array<Activity> = [
-        /**
-         * Discord User
-         */
-        {
-            avatar: {
-                alt: 'Discord Avatar',
-                url: `https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}.webp?size=256`,
-            },
-            title: status.discord_user.username,
-            description: `#${status.discord_user.discriminator}`,
-            icon: <StatusIndicator pulse={status.discord_status !== 'offline'} />,
-        },
-
-        /**
-         * Spotify
-         */
-        ...(status.spotify && status.listening_to_spotify
-            ? [
-                  {
-                      avatar: {
-                          alt: `${status.spotify.song} - ${status.spotify.artist}`,
-                          href: `https://open.spotify.com/track/${status.spotify.track_id}`,
-                          url: status.spotify.album_art_url,
-                      },
-                      title: status.spotify.song,
-                      description: status.spotify.artist,
-                      icon: 'feather:music',
-                  },
-              ]
-            : []),
-
-        /**
-         * All other activities
-         */
-        ...(status.activities.length > 0
-            ? status.activities.map((activity) => {
-                  if (activity.id === 'custom' || activity.id.includes('spotify')) return null
-
-                  const hasAsset = activity.assets && activity.assets.large_image ? true : false
-                  const avatar = hasAsset
-                      ? {
-                            alt: activity.details,
-                            url: `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`,
-                        }
-                      : {
-                            alt: activity.name,
-                            icon: true,
-                            url: '',
-                        }
-
-                  return {
-                      avatar,
-                      title: activity.name,
-                      description: [activity.details, ...(activity.state ? [activity.state] : [])],
-                  }
-              })
-            : []),
-    ].filter((item) => item !== null)
 
     return (
         <div className="flex flex-col space-y-5 w-full max-w-sm mx-auto px-4 py-4 bg-gray-900 bg-opacity-50 border-gray-600 backdrop-filter backdrop-blur-sm border-2  rounded-lg hover:shadow-lg default-transition">

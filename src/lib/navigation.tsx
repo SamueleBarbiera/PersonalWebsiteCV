@@ -56,24 +56,12 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 ]
 
 export function useNavigation() {
-    const {  loading, status }: any = useStatus()
-    const { theme, setTheme } = useTheme()
+	const { theme, setTheme } = useTheme();
 
-    const menuItems: NavigationItems = [
-        ...staticMenuItems,
-        ...(!loading && status!.discord_status !== 'offline'
-            ? [
-                  [
-                      {
-                          type: NavigationItemType.LINK,
-                          icon: <StatusIndicator pulse />,
-                          text: 'Status',
-                          href: '/status',
-                      } as NavigationItem,
-                  ],
-              ]
-            : []),
-    ]
+	const menuItems: NavigationItems = [
+		...staticMenuItems,
+	];
+
 
     const settingsItems: NavigationItems = [
         [

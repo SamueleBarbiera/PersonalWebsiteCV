@@ -21,20 +21,21 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
     }
 
     const json = (await response.json()) as GitHubRepos
+    console.log('🚀 - file: projects.ts - line 24 - fetchProjects - json', json)
 
     const { default: rawProjectPosts } = await import('../../data/projects.json')
     const projectPosts = rawProjectPosts as Array<ProjectPost>
 
     const projects: any = json
         .map((repo) => {
-            if (!repo.topics.includes('portfolio')) return null
-
             if (repo.archived) return null
-
+            let trimmedDescription, description
             // Strip the emoji suffix from the repo description
-            const trimmedDescription = repo.description.split(' ')
-            trimmedDescription.shift()
-            const description = trimmedDescription.join(' ')
+            if (repo.description != null && repo.description != undefined) {
+                trimmedDescription = repo.description.split(' ')
+                trimmedDescription.shift()
+                description = trimmedDescription.join(' ')
+            }
 
             // Check if there is a matching blog post to attach
             const repoPost =
@@ -52,6 +53,7 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
                 })(),
                 homepage: repo.homepage ?? undefined,
                 name: repo.name,
+                post: repoPost ? `/blog/${repoPost.post}` : undefined,
                 template: false,
                 url: repo.html_url.toLowerCase(),
             } as Project

@@ -53,7 +53,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
                                         </div>
 
                                         <div className="min-w-0 flex-1">
-                                            <h1 className="flex flex-wrap justify-between mb-2 text-gray-500 dark:text-white text-lg tracking-tight font-bold">
+                                            <h1 className="flex flex-wrap justify-between mb-2 text-gray-900 dark:text-white text-lg tracking-tight font-bold">
                                                 <span>{event.title}</span>
                                                 <span className="flex-1 sm:hidden" />
                                                 <PillDate className="mt-2 sm:mt-0" small={true}>
@@ -61,7 +61,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
                                                 </PillDate>
                                             </h1>
 
-                                            <p className="my-2 text-gray-300 text-base">{event.description}</p>
+                                            <p className="my-2 dark:text-gray-100 text-base">{event.description}</p>
 
                                             {event.link && (
                                                 <ButtonOutline
