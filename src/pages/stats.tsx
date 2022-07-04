@@ -8,17 +8,16 @@ const stats: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Shoubhit Dash | Stats</title>
+                <title>Samuele - Stats</title>
                 <link rel="icon" href="/favicon.ico" />
 
-                <meta name="title" content="Shoubhit Dash | Stats" />
-                <meta name="description" content="Shoubhit Dash aka nexxel's personal website" />
+                <meta name="title" content="Samuele - Stats" />
+                <meta name="description" content="Samuele aka samuele's personal website" />
 
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://nexxel.dev/" />
-                <meta property="og:title" content="Shoubhit Dash | Stats" />
-                <meta property="og:description" content="Shoubhit Dash aka nexxel's personal website" />
-                <meta property="og:image" content="/nexxel.jpg" />
+                <meta property="og:title" content="Samuele - Stats" />
+                <meta property="og:description" content="Samuele aka samuele's personal website" />
+                <meta property="og:image" content="/photo.jpg" />
             </Head>
             <Wrapper>
                 <Header head="Stats" size={5} />

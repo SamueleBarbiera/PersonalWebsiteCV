@@ -1,7 +1,7 @@
 import { fetchProjects } from '../lib/projects'
 import ListContainer from '../components/List/Container'
 import LayoutDefault from '../components/layouts/Default'
-import Animate from '../components'
+import Animate from '../components/Animate'
 import { ListActionType } from '../../types'
 import type { GetStaticProps } from 'next'
 import type { ListAction, Project } from '../../types'
@@ -26,7 +26,7 @@ export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
     const projects = JSON.parse(stringifiedProjects) as Array<Project>
 
     return (
-        <LayoutDefault seo={{ title: 'nuro ─ projects' }}>
+        <LayoutDefault>
             <div className="my-24 mx-2 sm:mx-6 lg:mb-28 lg:mx-8">
                 <div className="relative max-w-xl mx-auto">
                     <ListContainer>
@@ -40,17 +40,6 @@ export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
                             >
                                 <ListItem
                                     actions={[
-                                        ...(project.post
-                                            ? [
-                                                  {
-                                                      type: ListActionType.LINK,
-                                                      external: false,
-                                                      href: project.post,
-                                                      icon: 'feather:edit-3',
-                                                      label: `Blog post about ${project.name}`,
-                                                  } as ListAction,
-                                              ]
-                                            : []),
                                         ...(project.homepage
                                             ? [
                                                   {

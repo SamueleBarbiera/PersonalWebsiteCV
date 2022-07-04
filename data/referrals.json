@@ -117,32 +117,14 @@
 		"url": "https://join.monzo.com/c/d8z35vy"
 	},
 	{
-		"code": "nurodev-charmander",
-		"color": "#582be8",
-		"description": "A new kind of professional network",
-		"homepage": "https://www.polywork.com/",
-		"icon": "heroicons-outline:view-grid",
-		"name": "Polywork",
-		"url": "https://www.polywork.com/invite/nurodev-charmander"
-	},
-	{
-		"code": "nuro",
-		"color": "#853bce",
-		"description": "Build apps. Not infrastructure.",
-		"homepage": "https://railway.app",
-		"icon": "heroicons-outline:cloud",
-		"name": "Railway",
-		"url": "https://railway.app?referralCode=nuro"
-	},
-	{
 		"aliases": ["cv", "resume"],
-		"code": "nuro",
+		"code": "samuele",
 		"color": "#000000",
 		"description": "I’d like to add you to my professional network.",
 		"homepage": "https://read.cv",
 		"icon": "heroicons-outline:document-text",
 		"name": "Read.cv",
-		"url": "https://read.cv/join/nuro"
+		"url": "https://read.cv/join/Samuele"
 	},
 	{
 		"aliases": ["phone", "sim"],
@@ -192,7 +174,7 @@
 		"homepage": "https://vercel.com/home",
 		"icon": "heroicons-outline:cloud",
 		"name": "Vercel",
-		"url": "https://vercel.com/home?utm_source=nuro&utm_campaign=oss"
+		"url": "https://vercel.com/home?utm_source=samuele&utm_campaign=oss"
 	},
 	{
 		"bonus": "Free $10 credit over 30 days",

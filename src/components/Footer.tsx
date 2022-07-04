@@ -15,10 +15,6 @@ const Footer: FC = () => {
                             link: '/about',
                             text: 'About',
                         },
-                        {
-                            link: 'https://blog.nexxel.dev',
-                            text: 'Blog',
-                        },
                     ].map((link, index) => (
                         <Link passHref href={link.link} key={index}>
                             <span className="footer-links">{link.text}</span>
@@ -40,11 +36,11 @@ const Footer: FC = () => {
                 <div className="flex flex-col w-1/3">
                     {[
                         {
-                            link: 'https://github.com/nexxeln',
+                            link: 'https://github.com/samuelebarbiera',
                             text: 'GitHub',
                         },
                         {
-                            link: 'https://discord.com/users/758578599715405824',
+                            link: 'https://discord.com/users/403994086152994816',
                             text: 'Discord',
                         },
                     ].map((link, index) => (
@@ -63,7 +59,7 @@ const Footer: FC = () => {
             <p className="my-20 text-lg text-center text-gray-900 dark:text-white">
                 This website is open source on{' '}
                 <a
-                    href="https://github.com/nexxeln/nexxel.dev"
+                    href="https://github.com/samuelebarbiera/PersonalWebsiteCV"
                     target="_blank"
                     rel="noreferrer"
                     className="underline transition-opacity duration-300 hover:opacity-80"

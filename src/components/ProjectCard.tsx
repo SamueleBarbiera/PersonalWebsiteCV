@@ -32,7 +32,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ name, language, stars, forks, descr
     return (
         <>
             <a
-                href={`https://github.com/nexxeln/${link}`}
+                href={`https://github.com/samuelebarbiera/${link}`}
                 rel="noreferrer"
                 target="_blank"
                 className={`flex flex-col w-3/5 pb-2 border-4 rounded-xl hover:scale-[1.02] transition-all duration-200 ${

@@ -2,11 +2,10 @@ import Image from 'next/image'
 import { Fragment } from 'react'
 import { Icon } from '@iconify/react'
 import StatusIndicator from '../../Status/Indicator'
-import { useStatus } from '../../../lib'
+import { useStatus } from '../../../lib/lanyard'
 import { ReactNode } from 'react'
-import clsx from 'clsx'
-import { LanyardAvatarType } from '../../../../types'
-import { type } from 'os'
+import Loading from './Loading'
+import Error from './Error'
 
 type Avatar =
     | {
@@ -18,34 +17,22 @@ type Avatar =
           url: string
       }
 
+interface Activity {
+    avatar: Avatar
+    title: string
+    description: string | Array<string>
+    icon?: string | ReactNode
+}
+
 export default function Widget() {
-    const { color, loading, status } = useStatus()
+    const { loading, status } = useStatus()
+    console.log('🚀 - file: Standard.tsx - line 32 - Widget - status', status)
 
-    if (loading)
-        return (
-            <div className="flex space-x-4 w-full max-w-sm mx-auto px-4 py-4  bg-gray-900 bg-opacity-50 border-gray-600 backdrop-filter backdrop-blur-sm border-2 border-gray-200 rounded-lg hover:shadow-lg default-transition motion-safe:animate-pulse">
-                <div className="w-12 h-12 my-auto bg-gray-200 dark:bg-gray-600 rounded-full" />
-                <div className="flex-1 space-y-4 py-1">
-                    <div className="w-3/4 h-4 rounded bg-gray-200 dark:bg-gray-600" />
-                    <div className="h-4 rounded bg-gray-200 dark:bg-gray-600" />
-                </div>
-            </div>
-        )
+    if (loading) return <Loading />
 
-    if (!status || !status)
-        return (
-            <div className="flex space-x-4 w-full max-w-sm mx-auto px-4 py-4 bg-red-900 backdrop-filter backdrop-blur-sm border-2 border-red-500 rounded-lg hover:shadow-lg default-transition motion-safe:animate-pulse">
-                <div className="w-12 h-12 flex justify-center items-center my-auto text-red-500">
-                    <Icon className="w-8 h-8" icon="feather:alert-triangle" />
-                </div>
-                <div className="flex-1 space-y-4 py-1">
-                    <div className="w-3/4 h-4 rounded ring-2 ring-red-500" />
-                    <div className="h-4 rounded ring-2 ring-red-500" />
-                </div>
-            </div>
-        )
+    if (!status) return <Error />
 
-    const activities: any = [
+    const activities: Array<Activity> = [
         /**
          * Discord User
          */
@@ -81,16 +68,14 @@ export default function Widget() {
          * All other activities
          */
         ...(status.activities.length > 0
-            ? status.activities.map((activity: any) => {
+            ? status.activities.map((activity) => {
                   if (activity.id === 'custom' || activity.id.includes('spotify')) return null
 
                   const hasAsset = activity.assets && activity.assets.large_image ? true : false
                   const avatar = hasAsset
                       ? {
                             alt: activity.details,
-                            url: `https://cdn.discordapp.com/app-assets/${activity.application_id}/${
-                                activity!.assets.large_image
-                            }.webp`,
+                            url: `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`,
                         }
                       : {
                             alt: activity.name,
@@ -108,8 +93,8 @@ export default function Widget() {
     ].filter((item) => item !== null)
 
     return (
-        <div className="flex flex-col space-y-5 w-full max-w-sm mx-auto px-4 py-4 bg-gray-900 bg-opacity-50 border-gray-600) backdrop-filter backdrop-blur-sm border-2 border-gray-200 rounded-lg hover:shadow-lg default-transition">
-            {activities.map(({ activity, index }: any) => {
+        <div className="flex flex-col space-y-5 w-full max-w-sm mx-auto px-4 py-4 bg-gray-900 bg-opacity-50 border-gray-600 backdrop-filter backdrop-blur-sm border-2  rounded-lg hover:shadow-lg default-transition">
+            {activities.map((activity, index) => {
                 return (
                     <Fragment key={index}>
                         <div className="inline-flex items-center">
@@ -164,7 +149,7 @@ export default function Widget() {
                                         <h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-900 dark:text-white">
                                             {activity.title}
                                         </h1>
-                                        {activity.description.map(({ description, descriptionIndex }: any) => (
+                                        {activity.description.map((description, descriptionIndex) => (
                                             <p
                                                 className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400"
                                                 key={descriptionIndex}

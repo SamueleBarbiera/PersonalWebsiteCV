@@ -2,7 +2,7 @@ import emojiRegex from 'emoji-regex'
 import type { GitHubRepos, Project, ProjectPost } from '../../types'
 
 export async function fetchProjects(): Promise<Array<Project> | null> {
-    const response = await fetch('https://api.github.com/users/nurodev/repos', {
+    const response = await fetch('https://api.github.com/users/samuelebarbiera/repos', {
         headers: {
             ...(process.env.GITHUB_PAT && {
                 authorization: `token ${process.env.GITHUB_PAT}`,
@@ -52,7 +52,6 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
                 })(),
                 homepage: repo.homepage ?? undefined,
                 name: repo.name,
-                post: repoPost ? `/blog/${repoPost.post}` : undefined,
                 template: false,
                 url: repo.html_url.toLowerCase(),
             } as Project

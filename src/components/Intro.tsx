@@ -14,7 +14,7 @@ const Links: FC = () => {
             {[
                 {
                     icon: FiGithub,
-                    href: 'https://github.com/nexxeln',
+                    href: 'https://github.com/samuelebarbiera',
                 },
                 {
                     icon: FiMail,
@@ -51,7 +51,7 @@ const Intro: FC = () => {
         >
             <motion.div variants={anims.FadeContainer} initial="hidden" animate="visible">
                 <motion.h1 className="h-16 pt-2 text-5xl name w-fit" variants={anims.Fade}>
-                    Shoubhit Dash
+                    Samuele
                 </motion.h1>
 
                 <Wavy

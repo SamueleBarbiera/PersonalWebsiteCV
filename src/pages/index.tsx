@@ -41,12 +41,6 @@ import type { NavigationItem } from '../../types'
 const ACTIONS: Array<NavigationItem> = [
     {
         type: NavigationItemType.LINK,
-        href: '/blog',
-        icon: <Icon className="mr-3" icon="feather:edit-3" />,
-        text: 'Blog',
-    },
-    {
-        type: NavigationItemType.LINK,
         href: '/projects',
         icon: <Icon className="mr-3" icon="feather:copy" />,
         text: 'Projects',
@@ -54,7 +48,7 @@ const ACTIONS: Array<NavigationItem> = [
     {
         type: NavigationItemType.LINK,
         external: true,
-        href: 'https://github.com/nurodev',
+        href: 'https://github.com/samuelebarbiera',
         icon: <Icon className="mr-3" icon="feather:github" />,
         text: 'GitHub',
     },
@@ -75,17 +69,16 @@ const Home: NextPage = ({ projectsRes }: any) => {
     return (
         <>
             <Head>
-                <title>Shoubhit Dash | Home</title>
+                <title>Samuele - Home</title>
                 <link rel="icon" href="/favicon.ico" />
 
-                <meta name="title" content="Shoubhit Dash | Home" />
-                <meta name="description" content="Shoubhit Dash aka nexxel's personal website" />
+                <meta name="title" content="Samuele - Home" />
+                <meta name="description" content="Samuele aka samuele's personal website" />
 
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://nexxel.dev/" />
-                <meta property="og:title" content="Shoubhit Dash | Home" />
-                <meta property="og:description" content="Shoubhit Dash aka nexxel's personal website" />
-                <meta property="og:image" content="/nexxel.jpg" />
+                <meta property="og:title" content="Samuele - Home" />
+                <meta property="og:description" content="Samuele aka samuele's personal website" />
+                <meta property="og:image" content="/photo.jpg" />
             </Head>
             <Wrapper>
                 <Intro />
@@ -202,7 +195,7 @@ const Home: NextPage = ({ projectsRes }: any) => {
                         </ul>
                     </div>
                     <div className="self-center">
-                        <ViewMoreBtn text="View more" href="https://github.com/nexxeln" />
+                        <ViewMoreBtn text="View more" href="https://github.com/samuelebarbiera" />
                     </div>
                 </div>
             </Wrapper>

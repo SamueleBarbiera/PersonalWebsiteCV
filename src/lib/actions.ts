@@ -32,21 +32,11 @@ const actions: Action[] = [
         section: 'Navigation',
     },
     {
-        id: 'blog',
-        name: 'Blog',
-        keywords: 'articles',
-        perform: () => {
-            open('https://blog.nexxel.dev', '_blank')
-        },
-        section: 'External Links',
-        subtitle: 'Read my blog posts',
-    },
-    {
         id: 'github',
         name: 'GitHub',
         keywords: 'gh code',
         perform: () => {
-            open('https://github.com/nexxeln', '_blank')
+            open('https://github.com/samuelebarbiera', '_blank')
         },
         section: 'External Links',
         subtitle: 'View my open-source projects',

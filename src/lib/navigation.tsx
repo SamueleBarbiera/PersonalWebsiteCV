@@ -14,12 +14,6 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
         },
         {
             type: NavigationItemType.LINK,
-            icon: 'feather:edit-3',
-            text: 'Blog',
-            href: '/blog',
-        },
-        {
-            type: NavigationItemType.LINK,
             icon: 'feather:copy',
             text: 'Projects',
             href: '/projects',
@@ -30,26 +24,20 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
             text: 'Timeline',
             href: '/timeline',
         },
-        {
-            type: NavigationItemType.LINK,
-            icon: 'feather:link',
-            text: 'Referrals',
-            href: '/referrals',
-        },
     ],
     [
         {
             type: NavigationItemType.LINK,
             icon: 'feather:twitter',
             text: 'Twitter',
-            href: 'https://twitter.com/nurodev',
+            href: 'https://twitter.com/BarbieraSamuele',
             external: true,
         },
         {
             type: NavigationItemType.LINK,
             icon: 'feather:github',
             text: 'GitHub',
-            href: 'https://github.com/nurodev',
+            href: 'https://github.com/samuelebarbiera',
             external: true,
         },
     ],
@@ -88,17 +76,6 @@ export function useNavigation() {
                     state.set((settings: any) => ({
                         ...settings,
                         animations: !settings.animations,
-                    })),
-            },
-            {
-                type: NavigationItemType.ACTION,
-                icon: sound ? 'feather:volume-2' : 'feather:volume-x',
-                endIcon: sound ? 'feather:check-circle' : 'feather:circle',
-                text: `Sounds ${sound ? 'On' : 'Off'}`,
-                onClick: () =>
-                    state.set((settings: any) => ({
-                        ...settings,
-                        sound: !settings.sound,
                     })),
             },
             {

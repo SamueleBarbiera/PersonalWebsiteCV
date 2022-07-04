@@ -10,17 +10,16 @@ const about: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Shoubhit Dash | About</title>
+                <title>Samuele - About</title>
                 <link rel="icon" href="/favicon.ico" />
 
-                <meta name="title" content="Shoubhit Dash | About" />
-                <meta name="description" content="Shoubhit Dash aka nexxel's personal website" />
+                <meta name="title" content="Samuele - About" />
+                <meta name="description" content="Samuele aka samuelebarbiera's personal website" />
 
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://nexxel.dev/" />
-                <meta property="og:title" content="Shoubhit Dash | About" />
-                <meta property="og:description" content="Shoubhit Dash aka nexxel's personal website" />
-                <meta property="og:image" content="/nexxel.jpg" />
+                <meta property="og:title" content="Samuele - About" />
+                <meta property="og:description" content="Samuele aka samuele's personal website" />
+                <meta property="og:image" content="/photo.jpg" />
             </Head>
             <Wrapper>
                 <motion.div
@@ -35,10 +34,10 @@ const about: NextPage = () => {
                     <Text>
                         <motion.div variants={anims.FadeContainer} initial="hidden" animate="visible">
                             <motion.p variants={anims.Fade}>
-                                Hi, I&apos;m Shoubhit, commonly known as nexxel online. I&apos;m from and live&nbsp;(for
-                                now) in India. We got Computer Science in our school in 5th grade, and since then it has
-                                been my favourite subject at school, even though they taught us Java which is not so
-                                enjoyable.
+                                Hi, I&apos;m Shoubhit, commonly known as samuele online. I&apos;m from and
+                                live&nbsp;(for now) in India. We got Computer Science in our school in 5th grade, and
+                                since then it has been my favourite subject at school, even though they taught us Java
+                                which is not so enjoyable.
                                 <br />
                                 <br />
                                 In 2021 I started learning Python from{' '}
@@ -165,7 +164,7 @@ const about: NextPage = () => {
                                     <li>
                                         Open source on{' '}
                                         <a
-                                            href="https://github.com/nexxeln/nexxel.dev"
+                                            href="https://github.com/samuelebarbiera/PersonalWebsiteCV"
                                             rel="noreferrer"
                                             target="_blank"
                                         >
