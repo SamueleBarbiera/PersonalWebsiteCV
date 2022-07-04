@@ -1,45 +1,40 @@
-import { NextPage } from "next";
-import Head from "next/head";
-import Link from "next/link";
-import Wrapper from "../components/Wrapper";
+import { Icon } from '@iconify/react'
+import ButtonStandard from '../components/Button/Standard'
+import  LayoutError  from '../layouts/Error'
+import { NavigationItemType } from '../../types'
 
-const fourofour: NextPage = () => {
-  return (
-    <>
-      <Head>
-        <title>Shoubhit Dash | 404</title>
-        <link rel="icon" href="/favicon.ico" />
-
-        <meta name="title" content="Shoubhit Dash | 404" />
-        <meta
-          name="description"
-          content="Shoubhit Dash aka nexxel's personal website"
-        />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://nexxel.dev/" />
-        <meta property="og:title" content="Shoubhit Dash | 404" />
-        <meta
-          property="og:description"
-          content="Shoubhit Dash aka nexxel's personal website"
-        />
-        <meta property="og:image" content="/nexxel.jpg" />
-      </Head>
-      <Wrapper>
-        <div className="text-center my-36">
-          <h1 className="text-4xl font-bold">
-            Uh oh, looks like the link you entered is either work in progress or
-            is broken
-          </h1>
-          <Link passHref href="/">
-            <button className="w-2/3 py-4 mt-20 font-semibold uppercase transition-all duration-300 border-2 border-black rounded-md hover:scale-105 dark:border-gray-400">
-              Go back to home
-            </button>
-          </Link>
-        </div>
-      </Wrapper>
-    </>
-  );
-};
-
-export default fourofour;
+export default function Error() {
+    return (
+        <LayoutError>
+            <div className="flex flex-grow min-h-full pt-16 pb-12">
+                <div className="flex-grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex flex-shrink-0 justify-center">
+                        <Icon className="h-12 text-primary-500 w-auto" icon="feather:alert-triangle" />
+                    </div>
+                    <div className="py-4 text-center">
+                        <h1 className="mt-2 text-4xl font-extrabold text-gray-500 dark:text-white tracking-tight sm:text-5xl">
+                            Whoops!
+                        </h1>
+                        <p className="mt-8 text-sm font-medium text-gray-300 dark:text-gray-400">
+                            Looks like you took a wrong turn.
+                            <br />
+                            The page you&apos;re looking for couldn&apos;t be found.
+                        </p>
+                        <div className="mt-6 flex justify-center items-center space-x-4">
+                            <ButtonStandard
+                                type={NavigationItemType.ACTION}
+                                onClick={() => history.go(-1)}
+                                icon="feather:arrow-left"
+                            >
+                                Back
+                            </ButtonStandard>
+                            <ButtonStandard type={NavigationItemType.LINK} href="/" icon="feather:home">
+                                Home
+                            </ButtonStandard>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </LayoutError>
+    )
+}

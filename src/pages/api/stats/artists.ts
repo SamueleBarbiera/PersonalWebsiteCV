@@ -2,9 +2,8 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { SpotifyArtist, topArtists } from '../../../lib/spotify'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const response = await topArtists()
-    const { items } = await response.json()
-    //console.log('🚀 - file: artists.ts - line 10 - items', items)
+    const { items } = await topArtists()
+    console.log('🚀 - file: artists.ts - line 10 - items', items)
 
     const artists = items.slice(0, 5).map((artist: SpotifyArtist) => ({
         name: artist.name,
