@@ -17,7 +17,7 @@ export default function DefaultLayout({
     return (
         <>
             <NavbarStandard />
-            <main className="flex flex-col justify-center px-8">
+            <main className="flex flex-col justify-center ">
                 {showBackground}
                 {children}
             </main>

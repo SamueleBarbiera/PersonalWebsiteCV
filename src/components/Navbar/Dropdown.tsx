@@ -32,7 +32,7 @@ const StyledMenuItem = forwardRef<any, MenuLinkProps>(function StyledMenuItem(
                 'flex items-center px-4 py-3 text-sm font-medium tracking-wide cursor-pointer default-transition',
                 active
                     ? ' bg-gray-700 bg-opacity-50 text-white'
-                    : 'text-gray-300 hover:text-gray-700 dark:hover:text-white',
+                    : 'text-gray-900 hover:text-gray-700 dark:text-white',
                 className
             )}
             ref={ref}
@@ -51,14 +51,9 @@ function MenuButtonIcon({ className, icon, direction: type = 'left' }: MenuButto
     return <Icon aria-hidden="true" className={clsx('w-5 h-5 mr-3', className)} icon={icon} />
 }
 
-/**
- * Menu Link
- *
- * @see https://headlessui.dev/react/menu#integrating-with-next-js
- */
 function MenuLink({ children, href, onClick, ...rest }: MenuLinkProps) {
     return (
-        <Link href={href} passHref>
+        <Link href={href!} passHref>
             <StyledMenuItem onClick={(...args) => onClick(...args)} {...rest}>
                 {children}
             </StyledMenuItem>
@@ -85,7 +80,7 @@ export default function Dropdown({ children, items, position = 'top-left' }: Sta
                     >
                         <Menu.Items
                             className={clsx(
-                                'absolute w-[calc(100vw-1rem)] sm:w-56 mt-2 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm border border-gray-100 dark:border-gray-500 rounded-md shadow-lg divide-y divide-gray-100 dark:divide-gray-500 focus:outline-none',
+                                'absolute w-[calc(100vw-1rem)] sm:w-56 mt-2 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm   rounded-md shadow-xl divide-y divide-gray-600  focus:outline-none',
                                 position === 'top-left' && 'origin-top-left left-0',
                                 position === 'top-right' && 'origin-top-right right-0'
                             )}

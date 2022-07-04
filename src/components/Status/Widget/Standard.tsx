@@ -182,7 +182,7 @@ export default function Widget() {
                         </div>
 
                         {index + 1 !== activities.length && (
-                            <hr className="h-0.5 bg-gray-100 dark:bg-gray-600 border-none rounded-full" />
+                            <hr className="h-0.5 bg-gray-50 dark:bg-gray-600 border-none rounded-full" />
                         )}
                     </Fragment>
                 )

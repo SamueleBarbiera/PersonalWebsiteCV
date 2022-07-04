@@ -18,7 +18,7 @@ const Links: FC = () => {
                 },
                 {
                     icon: FiMail,
-                    href: 'mailto:shoubhit2005@gmail.com',
+                    href: 'barbierasamuele01@gmail.com',
                 },
             ].map((link, index) => (
                 <Link href={link.href} key={index} passHref>
@@ -50,20 +50,6 @@ const Intro: FC = () => {
             animate="visible"
         >
             <motion.div variants={anims.FadeContainer} initial="hidden" animate="visible">
-                <motion.h1 className="h-16 pt-2 text-5xl name w-fit" variants={anims.Fade}>
-                    Samuele
-                </motion.h1>
-
-                <Wavy
-                    text="Highschooler and Developer"
-                    heading="p"
-                    className="mb-0 text-xl text-gray-900 mt-11 md:mt-3 dark:text-white"
-                />
-
-                <motion.p className="mr-20 text-xl text-gray-600 dark:text-gray-400" variants={anims.Fade}>
-                    17 yo self-taught developer, trying to make the world a cooler place and stuff like that
-                </motion.p>
-
                 <motion.p
                     className="items-center hidden mt-10 mr-20 text-xl text-gray-600 dark:text-gray-400 sm:flex"
                     variants={anims.Fade}
@@ -89,13 +75,7 @@ const Intro: FC = () => {
             </motion.div>
 
             <motion.div variants={anims.Pfp} className="hidden sm:block">
-                <Image
-                    src="https://avatars.githubusercontent.com/u/95541290?v=4"
-                    alt="pfp"
-                    width={150}
-                    height={150}
-                    className="rounded-full"
-                />
+                <Image src={'/photo.jpg'} alt="pfp" width={150} height={150} className="rounded-full" />
             </motion.div>
         </motion.div>
     )

@@ -11,7 +11,7 @@ const Wrapper: FC<{ children: ReactNode }> = ({ children }) => {
                     <Navbar />
                 </div>
 
-                <div className="px-5 pt-8 md:pt-16 lg:pt-16">
+                <div className="p-0">
                     <main id="main">{children}</main>
                 </div>
 

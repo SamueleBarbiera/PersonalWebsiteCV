@@ -18,7 +18,7 @@ const BackToTop: FC = () => {
         <AnimatePresence>
             {showArrow && (
                 <motion.div
-                    className="back-to-top"
+                    className="back-to-top "
                     onClick={() => {
                         scrollTo({
                             top: 0,

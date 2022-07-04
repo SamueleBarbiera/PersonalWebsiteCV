@@ -1,21 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 * {
     @apply box-border p-0 m-0;
 }
 
-/* main-root {
-  font-family: "Barlow", sans-serif;
-} */
-
 html,
 body {
-    /* font-family: 'Barlow', sans-serif; */
-    font-family: 'Barlow';
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    @apply duration-200 ease-in-out;
     scroll-behavior: smooth;
 }
 
@@ -24,7 +20,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-    @apply w-2;
+    @apply w-0;
 }
 
 ::-webkit-scrollbar-thumb {

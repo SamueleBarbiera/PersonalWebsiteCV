@@ -1,6 +1,6 @@
 import { useTheme } from 'next-themes'
 import StatusIndicator from '../components/Status/Indicator'
-import { usePersistantState, useStatus } from '../lib'
+import { useStatus } from '../lib'
 import { NavigationItemType, Theme } from '../../types'
 import type { NavigationItem, NavigationItems } from '../../types'
 
@@ -24,6 +24,18 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
             text: 'Timeline',
             href: '/timeline',
         },
+        {
+            type: NavigationItemType.LINK,
+            icon: 'feather:bar-chart',
+            text: 'Stats',
+            href: '/stats',
+        },
+        {
+            type: NavigationItemType.LINK,
+            icon: 'feather:file-text',
+            text: 'About',
+            href: '/about',
+        },
     ],
     [
         {
@@ -44,9 +56,7 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 ]
 
 export function useNavigation() {
-    const state = usePersistantState()
-    const { animations: background, sound } = state.get()
-    const { color, loading, status }: any = useStatus()
+    const {  loading, status }: any = useStatus()
     const { theme, setTheme } = useTheme()
 
     const menuItems: NavigationItems = [
@@ -67,20 +77,6 @@ export function useNavigation() {
 
     const settingsItems: NavigationItems = [
         [
-            {
-                type: NavigationItemType.ACTION,
-                icon: 'feather:image',
-                endIcon: background ? 'feather:check-circle' : 'feather:circle',
-                text: `Animations ${background ? 'On' : 'Off'}`,
-                onClick: () =>
-                    state.set((settings: any) => ({
-                        ...settings,
-                        animations: !settings.animations,
-                    })),
-            },
-            {
-                type: NavigationItemType.DIVIDER,
-            },
             {
                 type: NavigationItemType.ACTION,
                 icon: 'feather:monitor',

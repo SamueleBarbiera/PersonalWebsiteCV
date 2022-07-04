@@ -105,19 +105,11 @@ const ToggleMode: React.FC = () => {
 
 const Navbar: FC = () => {
     const router = useRouter()
-    const links = ['home', 'about', 'stats']
 
     return (
-        <nav className="flex items-center justify-between capitalize">
+        <nav className="flex items-center justify-between capitalize mb-12">
             <div>
-                {links.map((link, index) => (
-                    <NavItem
-                        href={`/${link}`}
-                        text={link.charAt(0).toUpperCase() + link.slice(1)}
-                        router={router}
-                        key={index}
-                    />
-                ))}
+                <NavItem href={'/'} text={'My personal website'} router={router} />
             </div>
 
             <div className="flex items-center">

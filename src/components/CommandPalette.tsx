@@ -47,8 +47,8 @@ const CommandPalette = () => {
     return (
         <KBarPortal>
             <KBarPositioner className="z-50 select-none backdrop-blur bg-black/70">
-                <KBarAnimator className="w-1/3 overflow-hidden text-lg text-white bg-gray-100 rounded-lg dark:bg-[#111111] min-w-500">
-                    <KBarSearch className="w-full p-5 text-gray-900 bg-gray-100 rounded-lg outline-none dark:bg-[#111111] dark:text-white" />
+                <KBarAnimator className="w-1/3 overflow-hidden text-lg text-white bg-gray-50 rounded-lg dark:bg-[#111111] min-w-500">
+                    <KBarSearch className="w-full p-5 text-gray-900 bg-gray-50 rounded-lg outline-none dark:bg-[#111111] dark:text-white" />
                     <RenderResults />
                 </KBarAnimator>
             </KBarPositioner>

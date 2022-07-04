@@ -21,7 +21,7 @@ type StandardProps =
       } & DefaultProps)
 
 const ButtonStyles =
-    'flex justify-center items-center h-12 px-8 py-4 bg-gray-50 hover:bg-gray-100 hover:bg-opacity-50 hover:text-primary-400 bg-gray-900 hover:bg-gray-800 text-base font-bold text-primary-300 rounded-lg default-transition default-focus'
+    'flex justify-center items-center h-12 px-8 py-4 bg-gray-50 hover:bg-gray-50 hover:bg-opacity-50 hover:text-primary-400 bg-gray-900 hover:bg-gray-800 text-base font-bold text-primary-300 rounded-lg default-transition default-focus'
 
 export default function Standard({ children, className, icon, ...rest }: StandardProps) {
     switch (rest.type) {
