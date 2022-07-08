@@ -7,7 +7,6 @@ import { FiGithub, FiMail } from 'react-icons/fi'
 import { SiDiscord } from 'react-icons/si'
 import { RiLightbulbLine } from 'react-icons/ri'
 import * as anims from '../animations/index'
-import Wavy from '../animations/Wavy'
 
 const Links: FC = () => {
     return (
