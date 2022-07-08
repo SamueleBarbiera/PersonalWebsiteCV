@@ -27,8 +27,8 @@ export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
 
     return (
         <LayoutDefault>
-            <div className="my-24 mx-2 sm:mx-6 lg:mb-28 lg:mx-8">
-                <div className="relative max-w-xl mx-auto">
+            <div className="m-12 p-12">
+                <div className="relative w-min mx-auto ">
                     <ListContainer>
                         {projects.map((project, index) => (
                             <Animate

@@ -24,15 +24,15 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
         },
         {
             type: NavigationItemType.LINK,
-            icon: 'feather:bar-chart',
-            text: 'Stats',
-            href: '/stats',
-        },
-        {
-            type: NavigationItemType.LINK,
             icon: 'feather:file-text',
             text: 'About',
             href: '/about',
+        },
+        {
+            type: NavigationItemType.LINK,
+            icon: 'feather:bar-chart',
+            text: 'Stats',
+            href: '/stats',
         },
     ],
     [

@@ -18,8 +18,8 @@
 
     {
         "date": "07-13-2022",
-        "title": "Graduated University!",
-        "description": "Successfully completed my Bachelor's Degree",
+        "title": "Graduated ITS Alto adriatico!",
+        "description": "Successfully completed my IOT's Degree",
         "icon": "feather:award"
     },
     {
@@ -37,7 +37,7 @@
     {
         "date": "12-25-2001",
         "title": "Birthday!",
-        "description": "I was born the 9th of August 1997",
+        "description": "I was born the 25th of December 2001",
         "icon": "feather:gift"
     }
 ]

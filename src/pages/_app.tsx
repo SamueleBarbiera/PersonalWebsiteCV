@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import '../styles/nprogress.css'
-import '@fontsource/barlow'
 import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import { Router } from 'next/router'
 import NProgress from 'nprogress'

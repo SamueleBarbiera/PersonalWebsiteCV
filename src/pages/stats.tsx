@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 import Header from '../components/Header'
 import Stats from '../components/Stats'
-import Wrapper from '../components/Wrapper'
+
 import LayoutDefault from '../components/layouts/Default'
 
 const stats: NextPage = () => {
@@ -22,10 +22,8 @@ const stats: NextPage = () => {
             </Head>
 
             <LayoutDefault>
-                <Wrapper>
-                    <Header head="Stats" size={5} />
-                    <Stats />
-                </Wrapper>
+                <Header head="Stats" size={5} />
+                <Stats />
             </LayoutDefault>
         </>
     )

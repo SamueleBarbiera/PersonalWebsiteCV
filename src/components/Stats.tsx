@@ -21,9 +21,9 @@ const Track: FC<{ track: fetchers.SpotifyTrack }> = ({ track }) => {
 const Artist: FC<{ artist: fetchers.SpotifyArtist }> = ({ artist }) => {
     return (
         <Link href={artist.url} passHref>
-            <a className="flex stats-styles" rel="noreferrer" target="_blank">
-                <div className="px-5 pt-4 pb-2">
-                    <Image src={artist.img.url} height={100} width={100} alt={artist.name} className="rounded-full" />
+            <a className="flex stats-styles p-4" rel="noreferrer" target="_blank">
+                <div className="p-2 mx-auto justify-center items-center">
+                    <Image src={artist.img.url} height={600} width={600} alt={artist.name} className="rounded-full" />
                 </div>
                 <div className="flex flex-col items-start justify-center ml-5">
                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{artist.name}</h2>
@@ -41,7 +41,7 @@ const Tracks: FC = () => {
         <Card
             data={data!}
             title="My Top Tracks"
-            description="My favourite genres are rap and punk. I also listen to some hyperpop and rock."
+            description="My favourite genres are rap, trap, r&b and pop punk. "
             tracks={true}
         />
     )
@@ -50,7 +50,7 @@ const Tracks: FC = () => {
 const Artists: FC = () => {
     const { data } = useSWR('/api/stats/artists', fetchers.artistFetcher)
 
-    return <Card data={data!} title="My Top Artists" description="Powfu is <3" tracks={false} />
+    return <Card data={data!} title="My Top Artists" description="" tracks={false} />
 }
 
 type CardProps = {
@@ -62,7 +62,7 @@ type CardProps = {
 
 const Card: FC<CardProps> = ({ data, title, description, tracks }) => {
     return (
-        <motion.div className="flex flex-col mt-24" variants={anims.FadeContainer} initial="hidden" animate="visible">
+        <motion.div className="flex flex-col m-8" variants={anims.FadeContainer} initial="hidden" animate="visible">
             <Header head={title} size={4} />
             <motion.p className="mt-5 text-lg text-gray-500 dark:text-gray-400" variants={anims.Fade}>
                 {description}
@@ -80,8 +80,8 @@ const Card: FC<CardProps> = ({ data, title, description, tracks }) => {
 const Stats: FC = () => {
     return (
         <>
-            <Tracks />
             <Artists />
+            <Tracks />
         </>
     )
 }

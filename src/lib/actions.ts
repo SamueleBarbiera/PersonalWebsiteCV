@@ -12,6 +12,26 @@ const actions: Action[] = [
         section: 'Navigation',
     },
     {
+        id: 'projects',
+        name: 'Projects',
+        shortcut: ['p'],
+        keywords: 'project github git',
+        perform: () => {
+            open('/', '_self')
+        },
+        section: 'Navigation',
+    },
+    {
+        id: 'timeline',
+        name: 'Timeline',
+        shortcut: ['p'],
+        keywords: 'timeline data history',
+        perform: () => {
+            open('/', '_self')
+        },
+        section: 'Navigation',
+    },
+    {
         id: 'about',
         name: 'About',
         shortcut: ['a'],
