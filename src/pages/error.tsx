@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react'
 import { useRouter } from 'next/router'
 import ButtonStandard from '../components/Button/Standard'
-import  LayoutError  from '../layouts/Error'
+import  LayoutError  from '../components/layouts/Error'
 import { NavigationItemType } from '../../types'
 
 export default function Error() {

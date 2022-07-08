@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
-import  Action  from './Action'
+import Action from './Action'
 import { ListActionType } from '../../../types'
 import type { ReactNode } from 'react'
 import type { ListAction, WithChildren } from '../../../types'
@@ -18,19 +18,19 @@ export default function Item({ actions, children, description, icon, iconColor, 
     return (
         <li className="bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm border border-gray-100 dark:border-gray-500 rounded-lg transition ease-in-out duration-300">
             <div className="flex flex-col sm:flex-row items-center justify-between px-4 py-4 sm:px-6">
-                <div className="flex flex-1 items-center justify-start w-full">
+                <div className="flex flex-1 items-center justify-start w-full  ">
                     {icon &&
                         (typeof icon === 'string' ? (
                             <div
                                 className={clsx(
-                                    'flex flex-shrink-0 items-center justify-center w-12 h-12 rounded-full',
+                                    ' flex flex-shrink-0 items-center justify-center w-12 h-12 rounded-full',
                                     iconColor === undefined && 'bg-primary-500'
                                 )}
                                 style={{
                                     backgroundColor: iconColor !== undefined ? iconColor : undefined,
                                 }}
                             >
-                                <Icon className="w-6 h-6 text-white" icon={icon} />
+                                <Icon className="  w-6 h-6 text-white" icon={icon} />
                             </div>
                         ) : (
                             <>{icon}</>

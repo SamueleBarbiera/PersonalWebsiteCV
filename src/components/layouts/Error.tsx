@@ -1,5 +1,11 @@
 
+
+import type { WithChildren, WithProps } from '../../../types'
+
+
 export default function ErrorLayout({ children }: any) {
+
+
     return (
         <>
             <main className="flex flex-col justify-center px-8">

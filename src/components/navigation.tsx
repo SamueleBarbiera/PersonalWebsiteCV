@@ -1,6 +1,4 @@
 import { useTheme } from 'next-themes'
-import StatusIndicator from '../components/Status/Indicator'
-import { useStatus } from '../lib'
 import { NavigationItemType, Theme } from '../../types'
 import type { NavigationItem, NavigationItems } from '../../types'
 

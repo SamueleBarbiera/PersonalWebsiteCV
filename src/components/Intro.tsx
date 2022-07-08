@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useKBar } from 'kbar'
 import { FiGithub, FiMail } from 'react-icons/fi'
+import { SiDiscord } from 'react-icons/si'
 import { RiLightbulbLine } from 'react-icons/ri'
 import * as anims from '../animations/index'
 import Wavy from '../animations/Wavy'
@@ -19,6 +20,10 @@ const Links: FC = () => {
                 {
                     icon: FiMail,
                     href: 'barbierasamuele01@gmail.com',
+                },
+                {
+                    href: 'https://discord.com/users/403994086152994816',
+                    icon: SiDiscord,
                 },
             ].map((link, index) => (
                 <Link href={link.href} key={index} passHref>
@@ -44,7 +49,7 @@ const Intro: FC = () => {
     const { query } = useKBar()
     return (
         <motion.div
-            className="flex items-start p-2 mmt-20"
+            className="flex items-center justify-center mx-auto "
             variants={anims.FadeContainer}
             initial="hidden"
             animate="visible"

@@ -2,7 +2,7 @@ import { format, parse } from 'date-fns'
 import { Icon } from '@iconify/react'
 import PillDate from '../components/Pill/Date'
 import ButtonOutline from '../components/Button/Outline'
-import { Layout } from '../layouts'
+import LayoutDefault from '../components/layouts/Default'
 import type { GetStaticProps } from 'next'
 import type { Timeline, TimelineEvent } from '../../types'
 
@@ -29,7 +29,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
     }))
 
     return (
-        <Layout.Default>
+        <LayoutDefault>
             <div className="flex flex-grow min-h-screen pt-16 pb-12">
                 <div className="flex-grow flex flex-col justify-center max-w-sm sm:max-w-2xl w-full mx-auto px-0 sm:px-16">
                     <ul className="-mb-8" role="list">
@@ -87,6 +87,6 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
                     </ul>
                 </div>
             </div>
-        </Layout.Default>
+        </LayoutDefault>
     )
 }

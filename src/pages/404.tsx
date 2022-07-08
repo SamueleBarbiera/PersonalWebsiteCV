@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react'
 import ButtonStandard from '../components/Button/Standard'
-import  LayoutError  from '../layouts/Error'
+import  LayoutError  from '../components/layouts/Error'
 import { NavigationItemType } from '../../types'
 
 export default function Error() {

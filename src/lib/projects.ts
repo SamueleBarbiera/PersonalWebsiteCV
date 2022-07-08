@@ -47,7 +47,7 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
                 icon: (() => {
                     if (!repo.description) return undefined
 
-                    const char = repo.description.split(' ')[0]
+                    const char = repo.name
 
                     return emojiRegex().test(char) ? char : undefined
                 })(),

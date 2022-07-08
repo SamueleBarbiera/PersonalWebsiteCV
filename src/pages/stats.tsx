@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Stats from '../components/Stats'
 import Wrapper from '../components/Wrapper'
+import LayoutDefault from '../components/layouts/Default'
 
 const stats: NextPage = () => {
     return (
@@ -19,10 +20,13 @@ const stats: NextPage = () => {
                 <meta property="og:description" content="Samuele aka samuele's personal website" />
                 <meta property="og:image" content="/photo.jpg" />
             </Head>
-            <Wrapper>
-                <Header head="Stats" size={5} />
-                <Stats />
-            </Wrapper>
+
+            <LayoutDefault>
+                <Wrapper>
+                    <Header head="Stats" size={5} />
+                    <Stats />
+                </Wrapper>
+            </LayoutDefault>
         </>
     )
 }

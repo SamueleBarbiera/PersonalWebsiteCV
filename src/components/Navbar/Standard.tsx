@@ -2,7 +2,7 @@ import { Disclosure } from '@headlessui/react'
 import NavbarDropdown from './Dropdown'
 import ButtonIcon from '../../components/Button/Icon'
 import NavbarIcon from './Icon'
-import { useNavigation } from '../../lib/navigation'
+import { useNavigation } from '../navigation'
 
 export default function Standard() {
     const { menu, settings } = useNavigation()
