@@ -24,6 +24,7 @@
         "date-fns": "^2.24.0",
         "emoji-regex": "^10.1.0",
         "framer-motion": "^6.3.0",
+        "grapheme-splitter": "^1.0.4",
         "inter-ui": "^3.19.3",
         "is-web-crawler": "^1.1.0",
         "kbar": "^0.1.0-beta.34",
